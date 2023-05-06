@@ -1,12 +1,16 @@
 #!/usr/bin/env groovy
 
 pipeline {
-    agent none
+    agent any
+    tools {
+        maven 'Maven'
+    }
     stages {
         stage('build') {
             steps {
                 script {
-                    echo "Building the application..."
+                    echo "building the application..."
+                    sh 'mvn package'
                 }
             }
         }
@@ -21,6 +25,7 @@ pipeline {
             steps {
                 script {
                     echo "Deploying the application..."
+                    sh 'java -jar SearchMicroservices-0.0.1-SNAPSHOT.jar'
                 }
             }
         }
