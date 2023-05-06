@@ -1,10 +1,10 @@
 #!/usr/bin/env groovy
 
 pipeline {
-    agent any
-    tools {
-        maven 'Maven'
-    }
+    agent none
+//     tools {
+//         maven 'Maven'
+//     }
     stages {
         stage('build') {
             steps {
