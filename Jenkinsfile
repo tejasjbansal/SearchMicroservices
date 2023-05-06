@@ -10,7 +10,7 @@ pipeline {
             steps {
                 script {
                     echo "building the application..."
-                    sh "mvn --version"
+                    sh "java --version"
                 }
             }
         }
