@@ -1,13 +1,16 @@
 #!/usr/bin/env groovy
 
 pipeline {
-    agent none
+    agent any
+    tools{
+        maven 'Maven'
+    }
     stages {
         stage('build') {
             steps {
                 script {
                     echo "building the application..."
-                    sh 'java --version'
+                    sh 'maven --version'
 //                     sh 'mvn package'
                 }
             }
