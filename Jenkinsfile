@@ -25,7 +25,7 @@ pipeline {
             steps {
                 script {
                     echo "Deploying the application..."
-                    sh 'java -jar SearchMicroservices-0.0.1-SNAPSHOT.jar'
+                    sh 'java -jar target/SearchMicroservices-0.0.1-SNAPSHOT.jar'
 
                 }
             }
